@@ -11,6 +11,7 @@ django-cors-headers = "*"
 python-dateutil = "*"
 decouple = "*"
 pipfile = "*"
+python-decouple = "*"
 
 [dev-packages]
 
