@@ -1,0 +1,34 @@
+# editors
+*.swp
+.idea/
+.vscode/
+
+# python
+*.pyc
+__pycache__
+_trial_temp
+
+# virtual envioroment
+.env
+venv/
+dvenv/
+
+# logs
+logs/
+profile/
+
+# Our little secrets:
+secret.py
+private
+l_scripts/
+dump.rdb
+.rest/
+
+# Django stuff
+db.sqlite3
+*.jpg
+*.png
+media/
+
+# Tools generated data:
+.coverage*
