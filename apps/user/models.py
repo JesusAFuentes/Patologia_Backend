@@ -4,12 +4,12 @@ from django.contrib.auth.models import AbstractUser
 
 
 class User(AbstractUser):
-    class type(models.IntegerChoices):
+    class Type(models.IntegerChoices):
         ADMIN = (1, 'Admin')
-        SECRETARY = (1, 'Secretary')
-
+        SECRETARY = (2, 'Secretary')
     email = models.EmailField(unique=True)
-    user_type = models.PositiveSmallIntegerField(choices=type.choices)
+    user_type = models.PositiveSmallIntegerField(choices=Type.choices,
+                                                 default=Type.ADMIN)
     phone = models.CharField(max_length=20, blank=True, null=True)
 
     class Meta:
