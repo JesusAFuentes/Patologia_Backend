@@ -10,6 +10,7 @@ from rest_framework.authentication import BasicAuthentication
 from rest_framework import HTTP_HEADER_ENCODING, exceptions
 from django.core.exceptions import ObjectDoesNotExist
 from rest_framework import status
+from knox.views import LoginView
 import base64
 import binascii
 
@@ -94,3 +95,11 @@ class CustomBasicAuthentication(BasicAuthentication):
     def raise_invalid_credentials(self, message=_('Invalid credentials.')):
         raise exceptions.AuthenticationFailed(
             message, code=status.HTTP_401_UNAUTHORIZED)
+
+
+class LoginCustomView(LoginView):
+    """
+    This only overrides the original View for using the Basic Authentication
+    instead of the default one
+    """
+    authentication_classes = (CustomBasicAuthentication,)
